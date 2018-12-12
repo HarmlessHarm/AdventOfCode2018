@@ -2,7 +2,6 @@ from datetime import datetime, timedelta
 import re
 import pprint
 
-
 file = open('puzzle_input.txt', 'r').read().split('\n')
 
 parsed = list()
@@ -37,6 +36,7 @@ for date, action in parsed:
 		length = sleep_end - sleep_start
 		new_shift[sleep_start:sleep_end] = [1]*length
 
+# Part 1
 longest_sleep = 0
 best_min = None
 sleepy_guard = None
@@ -48,3 +48,17 @@ for guard, shifts in data.items():
 
 print('Guard: {}, total mins: {}, best min: {}'.format(sleepy_guard, longest_sleep, best_min))
 print("Day 04 part one:", sleepy_guard * best_min)
+
+
+# Part 2
+longest_time = 0
+best_min
+sleepy_guard = None
+for guard, shifts in data.items():
+	if max(shifts) > longest_time:
+		longest_time = max(shifts)
+		best_min = shifts.index(max(shifts))
+		sleepy_guard = guard
+
+print('Guard: {}, total mins: {}, best min: {}'.format(sleepy_guard, longest_time, best_min))
+print("Day 04 part two:", sleepy_guard * best_min)
